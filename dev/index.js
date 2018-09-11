@@ -1,7 +1,10 @@
 import {supportPushState, registerHook} from 'util/index.js'
+import {HashHistory} from './router-mode/hash'
+import {HTMLHistory} from './router-mode/history'
 import { assert } from './util';
+import { Observer } from '../../../ps-vue/vue/src/core/observer';
 
-class Router {
+export class Router {
     constructor (options) {
         this.beforeHooks = []
         this.afterHooks = []
@@ -18,10 +21,10 @@ class Router {
 
         switch (this.mode) {
             case 'history':
-                // TODO
+                this.history = new HTMLHistory(this)
                 break;
             case 'hash':
-                // TODO
+                this.history = new HashHistory(this)
                 break;
             default:
                 assert(false, `Invalid Router Mode: ${this.mode}`)
@@ -41,7 +44,9 @@ class Router {
     }
 
     init () {
-        
+        const history = this.history
+        const observer = new Observer(this.history.active)
+        const watcher = new Watcher(this.history.active, 'route', this.render.bind(this))
     }
 
     beforeEach (fn) {
@@ -60,7 +65,7 @@ class Router {
         this.history.replace(location)
     }
 
-    go (n) {
-        this.history.go(n)
-    }
+    // go (n) {
+    //     this.history.go(n)
+    // }
 }

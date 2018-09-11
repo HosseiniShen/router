@@ -1,11 +1,11 @@
 import {matchRoute, parseQuery} from './util/index'
 
-class Base {
+export class Base {
     constructor (router) {
         this.router = router
         this.active = {
             name: '',
-            path: '',
+            path: '/',
             query: {},
             route: {},
             meta: {}
