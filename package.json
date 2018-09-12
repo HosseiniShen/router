@@ -1,0 +1,23 @@
+{
+  "name": "router",
+  "version": "1.0.0",
+  "description": "easy router based on vue router",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HosseiniShen/router.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HosseiniShen/router/issues"
+  },
+  "homepage": "https://github.com/HosseiniShen/router#readme",
+  "devDependencies": {
+    "webpack": "^4.18.0"
+  }
+}

@@ -8,7 +8,8 @@ export class Base {
             path: '/',
             query: {},
             route: {},
-            meta: {}
+            meta: {},
+            component: ''
         }
     }
 
@@ -19,6 +20,7 @@ export class Base {
             this.active.name = targetRoute.name
             this.active.path = targetRoute.path
             this.active.meta = targetRoute.meta
+            this.component = targetRoute.component
             this.active.query =  targetRoute.query || parseQuery(targetRoute.path)
             cb && cb()
         })

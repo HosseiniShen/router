@@ -2,9 +2,10 @@ import {supportPushState, registerHook} from 'util/index.js'
 import {HashHistory} from './router-mode/hash'
 import {HTMLHistory} from './router-mode/history'
 import { assert } from './util';
-import { Observer } from '../../../ps-vue/vue/src/core/observer';
+import Observer from './observer/observer';
+import Watcher from './observer/watcher';
 
-export class Router {
+export default class Router {
     constructor (options) {
         this.beforeHooks = []
         this.afterHooks = []
@@ -40,7 +41,7 @@ export class Router {
     }
 
     render () {
-
+        this.container.innerHTML = this.history.active.route.component
     }
 
     init () {
