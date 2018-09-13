@@ -1,4 +1,4 @@
-import {matchRoute, parseQuery} from './util/index'
+import {matchRoute, parseQuery} from '../util/index'
 
 export class Base {
     constructor (router) {

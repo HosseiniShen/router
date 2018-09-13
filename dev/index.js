@@ -1,7 +1,6 @@
-import {supportPushState, registerHook} from 'util/index.js'
+import {supportPushState, registerHook, assert} from './util/index.js'
 import {HashHistory} from './router-mode/hash'
 import {HTMLHistory} from './router-mode/history'
-import { assert } from './util';
 import Observer from './observer/observer';
 import Watcher from './observer/watcher';
 
